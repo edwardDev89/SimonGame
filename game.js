@@ -15,6 +15,15 @@ $(document).keypress(function(){
     }   
 })
 
+$(document).click(function(){
+    if (!start)
+    {
+        $("h1").text("Level "+ level);
+        nextSequence();
+        start = true;
+    }   
+})
+
 $(document).on("tap", function(){
     if (!start)
     {
