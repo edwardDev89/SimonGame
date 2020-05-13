@@ -15,6 +15,15 @@ $(document).keypress(function(){
     }   
 })
 
+$(document).on("tap", function(){
+    if (!start)
+    {
+        $("h1").text("Level "+ level);
+        nextSequence();
+        start = true;
+    }   
+})
+
 $(".btn").click(function(e){
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
@@ -53,7 +62,6 @@ function checkAnswer(currentLvl){
     {
         if(gamePattern.length == userClickedPattern.length)
         {
-            console.log("same")
             setTimeout(() => {
                 nextSequence();
             }, 1000);    
