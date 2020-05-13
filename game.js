@@ -6,25 +6,7 @@ var randomChosenColor;
 var level = 0;
 var start = false;
 
-$(document).keypress(function(){
-    if (!start)
-    {
-        $("h1").text("Level "+ level);
-        nextSequence();
-        start = true;
-    }   
-})
-
-$(document).click(function(){
-    if (!start)
-    {
-        $("h1").text("Level "+ level);
-        nextSequence();
-        start = true;
-    }   
-})
-
-$(document).on("tap", function(){
+$("h1").click(function(){
     if (!start)
     {
         $("h1").text("Level "+ level);
@@ -83,7 +65,7 @@ function checkAnswer(currentLvl){
         setTimeout(() => {
             $("body").removeClass("game-over");
         }, 200);
-        $("h1").html("Wrong Color!<br/>Press Any Key to Restart!");
+        $("h1").html("Wrong Color!<br/>Click here to Restart!");
         startOver();
 }
 }
